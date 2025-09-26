@@ -10,7 +10,22 @@ defaults:
 hierarchy:
   - name: "Per-node data (yaml version)"
     path: "nodes/%{::trusted.certname}.yaml"
-  - name: "Other YAML hierarchy levels"
-    paths:
-      - "hosts.yaml"
-      - "common.yaml"
+
+  - name: "Secrets Manager Values"
+    lookup_key: "hiera_aws_sm"
+    options:
+      continue_if_not_found: true
+      #aws_access_key: <aws_access_key>
+      #aws_secret_key: <aws_secret_key>
+      region: us-west-2
+      delimeter: /
+      prefixes:
+        - "hiera_bricksandblocks/%{::environment}/%{::trusted.certname}"
+        - "hiera_bricksandblocks/%{::environment}/common/"
+
+
+  - name: "Domain values"
+    path: "domains/%{domain}.yaml"
+
+  - name: "Common values"
+    path: "common.yaml"

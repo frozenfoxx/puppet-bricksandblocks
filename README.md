@@ -1,7 +1,7 @@
-puppet-churchoffoxx
+puppet-bricksandblocks
 ===================
 
-Puppet configuration for the Church of Foxx.  This configuration features roles and profiles and external modules.
+Puppet configuration for BricksandBlocks.net.  This configuration features roles and profiles and external modules.
 
 # Layout
 
