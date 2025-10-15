@@ -1,3 +1,4 @@
+moduledir 'modules'
 forge 'forge.puppetlabs.com'
 
 mod 'puppetlabs/apt'
